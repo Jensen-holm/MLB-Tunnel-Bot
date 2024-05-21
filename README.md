@@ -11,6 +11,3 @@ You can find the MLB-Tunnel-Bot on X at [this link](https://twitter.com/MLBTunne
 
 The profile picture updates each day with the pitcher who threw the best tunneled pitch that day.
 
-## Render Chron Job Notes
-
-
