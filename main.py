@@ -14,6 +14,7 @@ def main(_retries: int = 5) -> None:
         _ = MLBTunnelBot.write(yesterday=yesterday)
         print(f"{datetime.datetime.now()} => Success !!")
     except Exception:
+        print(f"{datetime.datetime.now()} => Failure, {_retries} more tries.")
         if _retries:
             main(_retries=_retries - 1)
 
