@@ -1,7 +1,14 @@
-matplotlib==3.8.4
+scikit-image==0.22.0
+filterpy==1.4.5
+image_registration==0.2.9
+lap==0.4.0
+matplotlib==3.9.0
 numpy==1.26.4
 pandas==2.2.2
+Pillow==10.3.0
 polars==0.20.30
 pybaseball==2.2.7
-Requests==2.32.2
+Requests==2.32.3
+scipy==1.13.1
+tensorflow==2.16.1
 tweepy==4.14.0

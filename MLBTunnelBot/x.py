@@ -20,7 +20,7 @@ from .consts import *
 HEADSHOT_BASE_URL = "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_mlbam_id}/headshot/67/current"
 
 
-def _get_player_headshot(player_mlbam_id: str | float) -> np.ndarray:
+def _get_player_headshot(player_mlbam_id: str) -> np.ndarray:
     """
     Scrapes the players headshot with the given mlbam id from the
     HEADSHOT_BASE_URL url. This function both returns the numpy array

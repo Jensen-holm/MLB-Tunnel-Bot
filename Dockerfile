@@ -1,4 +1,4 @@
-FROM python:3.12.0
+FROM python:3.9
 
 # environment variables
 ARG CONSUMER_KEY
@@ -22,6 +22,8 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 COPY requirements.txt . 
+
+RUN pip install pip==21.1.1
 
 RUN pip install --no-cache-dir -r requirements.txt
 
