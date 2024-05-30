@@ -1,9 +1,8 @@
 import cv2
 import numpy as np
-import copy
 from image_registration import cross_correlation_shifts
-from src.utils import draw_ball_curve, fill_lost_tracking
-from src.FrameInfo import FrameInfo
+from .utils import draw_ball_curve, fill_lost_tracking
+from .FrameInfo import FrameInfo
 
 
 def generate_overlay(video_frames, width, height, fps, outputPath):

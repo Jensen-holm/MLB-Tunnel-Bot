@@ -5,8 +5,10 @@ import warnings
 import logging
 from tensorflow.python.saved_model import tag_constants
 from optparse import OptionParser
-from src.get_pitch_frames import get_pitch_frames
-from src.generate_overlay import generate_overlay
+from typing import Any
+
+from .src.get_pitch_frames import get_pitch_frames
+from .src.generate_overlay import generate_overlay
 
 # Ignore warnings
 if not sys.warnoptions:
@@ -23,12 +25,13 @@ SIZE = 416
 IOU = 0.45
 SCORE = 0.5
 WEIGHTS = os.path.join(
+    os.path.join(*os.path.split(__file__)[:-1]),
     "model",
     "yolov4-tiny-baseball-416",
 )
 
 
-def overlay_pitches(options) -> None:
+def overlay_pitches(options: dict[str, Any]) -> None:
 
     # Load pretrained model
     saved_model_loaded = tf.saved_model.load(
@@ -39,7 +42,7 @@ def overlay_pitches(options) -> None:
     assert saved_model_loaded is not None, f"loading model failed, it is None"
     infer = saved_model_loaded.signatures["serving_default"]
 
-    rootDir = options.rootDir
+    rootDir = options["rootDir"]
     outputPath = os.path.join(rootDir, "Overlay.avi")
     # Store the pitch frames and ball location of each video
     pitch_frames = []

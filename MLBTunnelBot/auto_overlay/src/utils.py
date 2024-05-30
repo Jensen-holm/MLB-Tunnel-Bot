@@ -1,7 +1,7 @@
 import cv2
 import copy
 import numpy as np
-from src.FrameInfo import FrameInfo
+from .FrameInfo import FrameInfo
 
 
 def draw_ball_curve(frame, trajectory):

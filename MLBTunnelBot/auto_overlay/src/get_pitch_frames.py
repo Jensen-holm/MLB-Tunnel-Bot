@@ -1,17 +1,10 @@
-import colorsys
 import copy
-import random
-import time
 import cv2
 import numpy as np
 import tensorflow as tf
-from PIL import Image
-from scipy.ndimage import shift
-from src.FrameInfo import FrameInfo
-from src.utils import distance, fill_lost_tracking
-from src.generate_overlay import generate_overlay, draw_ball_curve
-from src.SORT_tracker.sort import Sort
-from src.SORT_tracker.tracker import Tracker
+from .FrameInfo import FrameInfo
+from .utils import distance, fill_lost_tracking
+from .SORT_tracker.sort import Sort
 
 
 # Get the pitching section in the whole video

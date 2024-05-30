@@ -12,6 +12,7 @@ import datetime
 import requests
 import logging
 
+from .auto_overlay.pitching_overlay import overlay_pitches
 from .plot_tunnel import plot_strike_zone
 from .x_api_info import api, client
 from .compute_tscore import yesterdays_top_tunnel
@@ -20,7 +21,7 @@ from .consts import *
 HEADSHOT_BASE_URL = "https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_426,q_auto:best/v1/people/{player_mlbam_id}/headshot/67/current"
 
 
-def _get_player_headshot(player_mlbam_id: str) -> np.ndarray:
+def _get_player_headshot(player_mlbam_id: int) -> np.ndarray:
     """
     Scrapes the players headshot with the given mlbam id from the
     HEADSHOT_BASE_URL url. This function both returns the numpy array
@@ -28,7 +29,7 @@ def _get_player_headshot(player_mlbam_id: str) -> np.ndarray:
     to the assets directory under the name "assets/profile_pic.jpg"
 
     @params
-        player_mlbam_id: string of the players mlbam id.
+        player_mlbam_id: int of the players mlbam id.
 
     @return
         numpy array of the image data from the players headshot.
@@ -214,3 +215,16 @@ def write(yesterday: datetime.date, _debug=False) -> str:
     )
 
     return tweet_text
+
+
+def _get_mlb_video(play_description: str) -> str:
+    base_url = "https://www.mlb.com/video/{des}"
+    url = base_url.format(des=play_description)
+    print(url)
+    return url
+
+
+def _overlay_pitch_video(video_directory: str) -> None:
+    assert os.path.exists(video_directory)
+    _ = overlay_pitches(options={"rootDir": video_directory})
+
