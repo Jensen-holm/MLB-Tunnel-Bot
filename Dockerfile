@@ -25,6 +25,10 @@ COPY requirements.txt .
 
 RUN pip install pip==21.1.1
 
+RUN pip install numpy==1.26.4
+
+RUN pip install lap==0.4.0
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .

@@ -9,6 +9,22 @@ The MLB-Tunnel-Bot is a X bot that each day during the MLB season ...
 
 You can find the MLB-Tunnel-Bot on X at [this link](https://twitter.com/MLBTunnelBot)
 
+### Notes
+
+MLBTunnelBot relies on[ML-auto-baseball-pitching-overlay](https://github.com/chonyy/ML-auto-baseball-pitching-overlay) package which relies on a lot of older versions of python packages. In order to setup this project I had to do a few special steps.
+
+**virtual environment**
+
+  `brew install python3@3.9`
+
+  `virtualenv --python <path/to/python3.9> venv`
+
+  `source venv/bin/activate`
+
+  `pip install pip==21.1.1`
+
+  `pip install -r requirements.txt`
+
 ### Build Locally
 
 **Makefile & Docker**

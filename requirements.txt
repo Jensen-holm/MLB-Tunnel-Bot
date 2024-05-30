@@ -12,3 +12,5 @@ Requests==2.32.3
 scipy==1.13.1
 tensorflow==2.16.1
 tweepy==4.14.0
+opencv-python==4.9.0.80
+

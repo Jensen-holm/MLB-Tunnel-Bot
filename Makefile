@@ -1,7 +1,8 @@
-build:
+
+docker/build:
 	docker build -t mlb-tunnel-bot .
 
-run:
+docker/run:
 	docker run \
 		--env CLIENT_ID=$(CLIENT_ID) \
 		--env CLIENT_SECRET=$(CLIENT_SECRET) \
